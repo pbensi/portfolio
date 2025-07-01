@@ -136,7 +136,7 @@ main {
 
 .home-section {
     align-content: center;
-    height: 670px;
+    height: 675px;
 }
 
 .home-content {
@@ -213,8 +213,8 @@ main {
     width: 500px;
     height: auto;
     border-radius: 10px;
-    filter: drop-shadow(0 0 10px var(--color-ff0000));
-    animation: auora 2s infinite alternate;
+    filter: drop-shadow(0 0 10px var(--secondary-color));
+    animation: auora 1.5s infinite alternate;
 }
 
 .services-section {
@@ -234,13 +234,42 @@ main {
 }
 
 .service-card {
+    position: relative;
     align-content: center;
     border-radius: 12px;
-    background-color: var(--color-fff);
+    background-color: var(--background-color);
+    border:1px solid var(--background-color);
     box-shadow: 0 0 15px var(--box-shadow-color);
     padding: 30px 20px;
     width: 280px;
+    cursor: default;
     height: auto;
+}
+
+
+.recommended-tag {
+    position: absolute;
+    top: -20px;
+    right: -12px;
+    color: var(--color-fff);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.highly-recommended {
+    background-color: #FF6347;
+}
+
+.recommended {
+    background-color: #FFD700;
+}
+
+.standard {
+    background-color: #4CAF50;
 }
 
 .service-card img {
@@ -275,7 +304,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-fff);
+    background-color: var(--background-color);
+    border: 1px solid var(--background-color);
     border-radius: 8px;
     box-shadow: 0 0 10px var(--box-shadow-color);
     padding: 10px;
@@ -527,7 +557,7 @@ main {
     }
 
     100% {
-        filter: drop-shadow(0 0 25px var(--color-ff0000));
+        filter: drop-shadow(0 0 25px var(--primary-color));
     }
 }
 
