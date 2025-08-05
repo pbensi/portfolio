@@ -153,6 +153,75 @@ main {
     padding-right: 40px;
 }
 
+.random-text {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: transparent;
+  white-space: nowrap;
+  font-size: 48px;
+  line-height: 2em;
+  outline: none;
+}
+
+.random-text:before {
+ content: "Hi, I'm Frank";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  text-indent: 0;
+  color: var(--text-color);
+  animation: random-text-animation 3s steps(3) infinite;
+}
+
+@keyframes random-text-animation {
+  0% {
+    content: '4@,3SAscAi;9,bT4';
+  }
+  10% {
+    content: '$R6?4dSj{qS<7Yh7';
+  }
+  20% {
+    content: '+BDs73f;[u3^4Lgg';
+  }
+  30% {
+    content: '{qS<7Yh7+BDs73f;';
+  }
+  50% {
+    content: 'Ai;9,bT4$R6?4dSj';
+  }
+  60% {
+    content: "Hi, I'm Frank";
+  }
+  70% {
+    content: "Hi, I'm Frank";
+  }
+  80% {
+content: "Hi, I'm Frank";
+  }
+  90% {
+   content: "Hi, I'm Frank";
+  }
+  100% {
+content: "Hi, I'm Frank";
+  }
+}
+
+@keyframes show-tex-animation {
+  93% {
+    color: transparent;
+  }
+  94% {
+    color: var(--text-color);
+  }
+  100% {
+    color: var(--text-color);
+  }
+}
+
+
 .text-content h1 {
     font-size: 3rem;
 }
@@ -244,32 +313,6 @@ main {
     width: 280px;
     cursor: default;
     height: auto;
-}
-
-
-.recommended-tag {
-    position: absolute;
-    top: -20px;
-    right: -12px;
-    color: var(--color-fff);
-    font-size: 12px;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    z-index: 2;
-}
-
-.highly-recommended {
-    background-color: #FF6347;
-}
-
-.recommended {
-    background-color: #FFD700;
-}
-
-.standard {
-    background-color: #4CAF50;
 }
 
 .service-card img {
