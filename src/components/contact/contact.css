@@ -200,7 +200,7 @@ textarea:not(:placeholder-shown)~label {
 }
 
 .status-toast.active {
-    right: 24px;
+    right: 0px;
 }
 
 .status-toast.success {
@@ -233,14 +233,5 @@ textarea:not(:placeholder-shown)~label {
 
     .google-overlay .overlay-content {
         max-width: 260px;
-    }
-
-    .status-toast {
-        width: 90%;
-        right: -100%;
-    }
-
-    .status-toast.active {
-        right: 5%;
     }
 }
