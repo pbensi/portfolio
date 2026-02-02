@@ -1,0 +1,22 @@
+.subtitle {
+  margin-bottom: 35px;
+  padding-left: 15px;
+  border-left: 2px solid var(--neon-green);
+}
+
+.contact-item {
+  font-size: 0.9rem;
+  margin: 10px 0;
+  color: var(--text-muted);
+}
+
+.info-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.info-link:hover {
+  color: var(--neon-green);
+}

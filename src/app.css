@@ -1,0 +1,13 @@
+main {
+  position: relative;
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+footer {
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 20px 0;
+  text-align: center;
+}

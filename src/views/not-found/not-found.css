@@ -1,0 +1,25 @@
+.not-found {
+    text-align: center;
+    padding: 50px;
+}
+
+.not-found h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.not-found p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.not-found a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.not-found a:hover {
+    color: var(--color-link-hover);
+}

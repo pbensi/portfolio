@@ -1,0 +1,245 @@
+.timeline-container {
+  height: auto;
+  overflow: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-green) transparent;
+}
+
+.timeline-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background: var(--neon-green);
+  border-radius: 10px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-green);
+}
+
+.hover-image {
+  position: absolute;
+  top: 50%;
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 20;
+}
+
+.timeline-item.right .hover-image {
+  right: calc(100% + 40px);
+}
+
+.timeline-item.left .hover-image {
+  left: calc(100% + 40px);
+}
+
+.timeline-item:has(.hover-company:hover) .hover-image {
+  opacity: 1;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      transparent,
+      var(--green) 15%,
+      var(--neon-green) 85%,
+      transparent);
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  animation: reveal linear both;
+  animation-timeline: --item;
+  animation-range: entry 10% cover 30%;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.left {
+  left: 0;
+  flex-direction: row-reverse;
+}
+
+.right {
+  left: 50%;
+  flex-direction: row;
+}
+
+.connector-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 60px;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.connector-line {
+  height: 2px;
+  width: 100%;
+  z-index: -1;
+  background: var(--green);
+  opacity: 0.3;
+}
+
+.dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--bg);
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--neon-green);
+}
+
+.right .dot {
+  left: -7px;
+}
+
+.left .dot {
+  right: -7px;
+}
+
+.card {
+  background: var(--surface-muted);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 28px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.date {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--neon-green);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.role {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+  color: var(--neon-green);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+.company {
+  display: block;
+  font-size: 0.85em;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 2px;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(5px);
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 10px;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 2px dotted var(--neon-green);
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding: 20px 15px 20px 0;
+  }
+
+  .timeline::before {
+    left: 30px;
+    transform: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    flex-direction: row !important;
+    margin-bottom: 25px;
+  }
+
+  .connector-group {
+    width: 30px;
+    margin-left: 25px;
+  }
+
+  .dot {
+    left: -1px !important;
+    right: auto !important;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .role {
+    font-size: 1.1rem;
+  }
+
+  .hover-image {
+    display: none;
+  }
+}

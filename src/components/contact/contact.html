@@ -1,0 +1,51 @@
+<section class="contact-card">
+    <app-contact-detail></app-contact-detail>
+
+    <div class="form-wrapper">
+        <div class="google-overlay" id="googleOverlay">
+            <div class="overlay-content">
+                <div class="lock-icon animated-lock">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="lock-body" x="4" y="10" width="16" height="10" rx="3" stroke="currentColor"
+                            stroke-width="2" />
+                        <path class="lock-shackle" d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="2.2"
+                            stroke-linecap="round" />
+                        <circle cx="12" cy="15" r="1.6" fill="currentColor" />
+                    </svg>
+                </div>
+
+                <h3 L="verify_identity">Identity Verification</h3>
+                <p L="sign_in_to_continue">Please sign in to enable the form.</p>
+                <div id="googleBtnContainer"></div>
+            </div>
+        </div>
+
+        <form id="contactForm" novalidate>
+            <div class="form-group">
+                <input type="text" name="company" id="company" placeholder=" " required autocomplete="off">
+                <label for="company">Company</label>
+            </div>
+
+            <div class="form-group">
+                <textarea name="message" id="message" placeholder=" " required autocomplete="off"></textarea>
+                <label for="message" L="what_on_your_mind">What's on your mind?</label>
+            </div>
+
+            <p class="safety-notice" L="safety_notice">
+                Your email and message will be kept safe under Google security policies.
+            </p>
+
+            <button type="submit" id="submitBtn" L="send_message" disabled>
+                Send Message
+            </button>
+        </form>
+    </div>
+
+    <div id="statusToast" class="status-toast">
+        <div id="statusIcon" class="status-icon"></div>
+        <div class="status-content">
+            <h4 id="statusTitle"></h4>
+            <p id="statusMsg"></p>
+        </div>
+    </div>
+</section>

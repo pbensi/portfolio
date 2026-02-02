@@ -1,0 +1,47 @@
+<nav class="nav">
+  <div class="nav-container">
+    <!-- <div class="logo">
+      <span class="logo-text" L="logo" L-args='["FRB"]'>FRB</span>
+    </div> -->
+
+    <ul class="nav-list">
+    </ul>
+
+    <div class="nav-controls">
+      <select id="lang-select">
+        <option value="en">English</option>
+        <option value="ceb">Bisaya</option>
+      </select>
+
+      <select id="theme-select">
+        <option value="default">Default</option>
+        <option value="light" L="light">Light</option>
+        <option value="dark" L="dark">Dark</option>
+      </select>
+
+      <button id="contactToggle" class="floating-contact-btn" title="Contact Me">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+          <path
+            d="M2 6C2 4.89543 2.89543 4 4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6Z"
+            stroke="currentColor" stroke-width="2" />
+
+          <path d="M2 6L12 13L22 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+
+          <line class="scan-line" x1="4" y1="10" x2="20" y2="10" stroke="currentColor" stroke-width="1"
+            stroke-dasharray="2 2" opacity="0.5" />
+        </svg>
+      </button>
+
+
+      <button id="nav-toggle" class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<section id="contactPanel" class="contact-panel">
+  <app-contact></app-contact>
+</section>

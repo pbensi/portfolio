@@ -1,0 +1,132 @@
+.skill-galaxy-wrapper {
+  position: relative;
+  width: 100%;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.galaxy-container {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  transform: rotateX(65deg);
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  border: 5px dotted var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px var(--neon-green);
+  pointer-events: none;
+  transform: translateZ(0);
+  animation: rotate-orbit var(--duration) linear infinite;
+  display: none;
+}
+
+.satellites-container {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  z-index: 3;
+  animation: rotate-orbit var(--duration) linear infinite;
+}
+
+.center-hub {
+  position: absolute;
+  width: var(--hub-size);
+  height: var(--hub-size);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: clamp(10px, 2.5vw, 13px);
+  letter-spacing: 2px;
+  transform: rotateX(-65deg) translateZ(10px);
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 5;
+}
+
+.satellite {
+  position: absolute;
+  width: var(--sat-size);
+  height: var(--sat-size);
+  transform-style: preserve-3d;
+  --radius: calc(var(--size) / 2);
+  left: calc(50% + (var(--radius) * var(--cos)) - (var(--sat-size) / 2));
+  top: calc(50% + (var(--radius) * var(--sin)) - (var(--sat-size) / 2));
+  animation: counter-rotate var(--duration) linear infinite;
+}
+
+.glass-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 255, 65, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--neon-green);
+  border-radius: 10px;
+  animation: focal-depth var(--duration) linear infinite;
+}
+
+@keyframes focal-depth {
+
+  0%,
+  100% {
+    transform: scale(1.2) translateZ(120px);
+    filter: blur(0px) brightness(1.2);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.65) translateZ(-120px);
+    filter: blur(2px) brightness(0.4);
+    opacity: 0.6;
+  }
+}
+
+.satellite img {
+  width: 65%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+@keyframes rotate-orbit {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes counter-rotate {
+  from {
+    transform: rotateZ(0deg) rotateX(-65deg);
+  }
+
+  to {
+    transform: rotateZ(-360deg) rotateX(-65deg);
+  }
+}
+
+@media (hover: hover) {
+  .satellite:hover .glass-card {
+    filter: blur(0px) brightness(1.3) !important;
+    transform: scale(1.4) translateZ(150px);
+    transition: 0.3s ease;
+  }
+}
